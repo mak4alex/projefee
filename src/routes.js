@@ -6,15 +6,15 @@ import * as containers from './containers';
 
 const {
   CounterPage,
-  AnotherPage,
-  NotFoundPage,
+  TasksPage,
+  NotFoundPage,  
 } = containers;
 
 
 export default (
   <Route component={App}>
     <Route path="/" component={CounterPage} />
-    <Route path="/another" component={AnotherPage} />
+    <Route path="/tasks" component={TasksPage} />
     <Route path="*" component={NotFoundPage} />
   </Route>
 );

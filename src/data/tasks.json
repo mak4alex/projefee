@@ -6,7 +6,7 @@
       "taskId": 1,
       "taskTitle": "Task1",
       "laboriousness": 50,
-      "resource": 13,
+      "resource": 13
     },
     { 
       "projectId": 1,
@@ -14,7 +14,7 @@
       "taskId": 2,
       "taskTitle": "Task2",
       "laboriousness": 150,
-      "resource": 10,
+      "resource": 10
     },
     { 
       "projectId": 1,
@@ -22,7 +22,7 @@
       "taskId": 3,
       "taskTitle": "Task3",
       "laboriousness": 20,
-      "resource": 43,
+      "resource": 43
     },
     { 
       "projectId": 2,
@@ -30,7 +30,7 @@
       "taskId": 4,
       "taskTitle": "Task4",
       "laboriousness": 50,
-      "resource": 13,
+      "resource": 13
     },
     { 
       "projectId": 2,
@@ -38,7 +38,7 @@
       "taskId": 5,
       "taskTitle": "Task5",
       "laboriousness": 10,
-      "resource": 15,
+      "resource": 15
     },
     { 
       "projectId": 2,
@@ -46,7 +46,7 @@
       "taskId": 6,
       "taskTitle": "Task6",
       "laboriousness": 20,
-      "resource": 13,
+      "resource": 13
     },
     { 
       "projectId": 3,
@@ -54,7 +54,7 @@
       "taskId": 7,
       "taskTitle": "Task7",
       "laboriousness": 40,
-      "resource": 13,
+      "resource": 13
     },
     { 
       "projectId": 3,
@@ -62,7 +62,7 @@
       "taskId": 8,
       "taskTitle": "Task8",
       "laboriousness": 30,
-      "resource": 51,
+      "resource": 51
     },
     { 
       "projectId": 3,
@@ -70,7 +70,7 @@
       "taskId": 9,
       "taskTitle": "Task9",
       "laboriousness": 44,
-      "resource": 11,
-    },
-  ],
+      "resource": 11
+    }
+  ]
 }
