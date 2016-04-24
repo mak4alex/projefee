@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import activeComponent from 'react-router-active-component';
 
 
-
 export default class Main extends Component {
   static propTypes = {
     children: PropTypes.any.isRequired,
@@ -10,7 +9,7 @@ export default class Main extends Component {
 
   render() {
     const NavLink = activeComponent('li');
-  
+ 
     return (
       <div className="container">
         <nav>
