@@ -14,10 +14,12 @@ class NewReportPage extends Component {
     super(props, context);
     this.state = {
       laborCosts: 0,
+      startDate: '',
       taskOptions: [],
     };
     this.submitForm = this.submitForm.bind(this);
     this.changeLaborRange = this.changeLaborRange.bind(this);
+    this.changeStartDate = this.changeStartDate.bind(this);
     this.getProjectOptions = this.getProjectOptions.bind(this);
     this.filterTasks = this.filterTasks.bind(this);
     this.resetForm = this.resetForm.bind(this);
@@ -37,6 +39,10 @@ class NewReportPage extends Component {
     }), 'value');
     projectOptions.unshift({ value: '', label: 'Please select…' });
     return projectOptions;
+  }
+
+  changeStartDate(e, v) {
+    this.setState({ startDate: v });
   }
 
   changeLaborRange(e, v) {
@@ -61,6 +67,7 @@ class NewReportPage extends Component {
   submitForm(report) {
     console.log(report);
     delete report.laborCostsRange;
+    delete report.taskOptionsFilter;
     this.props.addReport(report);
     this.resetForm();
   }
@@ -81,14 +88,16 @@ class NewReportPage extends Component {
                 name="title" id="title" value="" label="Title"
                 type="text" placeholder="Type report title..." required
               />
-              <Input name="date" value="" label="Date" type="date" required />
-              <Input name="startTime" value="" label="Start time"
-                type="time" required
+              <Input name="startDate" value="" label="Start date" type="date"
+                onChange={this.changeStartDate} required
               />
-              <Input name="endTime" value="" label="End time"
-                type="time" required
+              <Input name="endDate" value="" label="End date" type="date"
+                min={this.state.startDate} required
               />
-              <Input type="text" name="laborCosts" label="Labor costs"
+              <Input name="timeCosts" value="0" label="Time costs (in hours)"
+                type="number" min="0"
+              />
+              <Input type="text" name="laborCosts" label="Labor costs (in units)"
                 disabled value={this.state.laborCosts}
               />
               <Input type="range" name="laborCostsRange" label="" value="0"

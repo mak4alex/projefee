@@ -15,9 +15,9 @@ export default class ReportTable extends Component {
           <tr>
             <th>id</th>
             <th>Title</th>
-            <th>Date</th>
-            <th>Start Time</th>
-            <th>End Time</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Time Costs</th>
             <th>Labor Costs</th>
             <th>Project Title</th>
             <th>Task Title</th>

@@ -14,7 +14,8 @@ export default class ReportTimeLine extends Component {
       return {
         id: report.id,
         content: `#${report.id} ${report.title}`,
-        start: report.date,
+        start: report.startDate,
+        end: report.endDate,
       };
     });
     const options = {};

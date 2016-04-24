@@ -13,9 +13,9 @@ export default class ReportRow extends Component {
       <tr>
         <td>{report.id}</td>
         <td>{report.title}</td>
-        <td>{report.date}</td>
-        <td>{report.startTime}</td>
-        <td>{report.endTime}</td>
+        <td>{report.startDate}</td>
+        <td>{report.endDate}</td>
+        <td>{report.timeCosts}</td>
         <td>{report.laborCosts}</td>
         <td>{report.projectTitle}</td>
         <td>{report.taskTitle}</td>

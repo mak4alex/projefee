@@ -4,19 +4,27 @@ import { ADD_REPORT, REMOVE_REPORT } from './../actions/report';
 const initialState = {
   entities: [
     {
-      title: "weqe",
-      laborCosts: "36",
+      title: "ProjX",
+      laborCosts: "86",
+      timeCosts: "26",
       projectTitle: "Project1",
       taskTitle: "Task10",
-      date: "2016-12-31",
-      startTime: "13:59",
-      taskOptionsFilter: "free",
-      endTime: "12:59",
-      id:1,
+      startDate: "2015-04-06",
+      endDate: "2015-05-06",
+      id: 1,
     },
-
+    {
+      title: "Proj1",
+      laborCosts: "36",
+      timeCosts: "16",
+      projectTitle: "Project2",
+      taskTitle: "Task11",
+      startDate: "2015-04-10",
+      endDate: "2015-04-16",
+      id: 2,
+    },
   ],
-  counter: 2,
+  counter: 3,
 };
 
 let newReport = null;
