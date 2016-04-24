@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import vis from 'vis';
 
 
 class ListReportPage extends Component {
 
-
+  componentDidMount() {
+    const container = document.getElementById('timeline');
+    const mydata = this.props.reports.map(report => {
+      return {
+        id: report.id,
+        content: `#${report.id} ${report.title}`,
+        start: report.date,
+      };
+    });
+    const options = {};
+ 
+    new vis.Timeline(container, mydata, options);
+  }
 
   render() {
- 
     return (
       <div>
+        <div id="timeline"></div>
         <table className="table table-bordered table-hover">
           <thead>
             <tr>
@@ -41,7 +53,6 @@ class ListReportPage extends Component {
             }
           </tbody>
         </table>
-
       </div>
     );
   }
