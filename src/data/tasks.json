@@ -4,7 +4,7 @@
       "projectId": 1,
       "projectTitle": "Project1", 
       "taskId": 1,
-      "taskTitle": "Task1",
+      "taskTitle": "Task11",
       "laboriousness": 50,
       "resource": 13
     },
@@ -71,6 +71,22 @@
       "taskTitle": "Task9",
       "laboriousness": 44,
       "resource": 11
+    },
+    { 
+      "projectId": null,
+      "projectTitle": null, 
+      "taskId": 10,
+      "taskTitle": "Task10",
+      "laboriousness": 14,
+      "resource": 9
+    },
+    { 
+      "projectId": null,
+      "projectTitle": null, 
+      "taskId": 11,
+      "taskTitle": "Task11",
+      "laboriousness": 18,
+      "resource": 9
     }
   ]
 }

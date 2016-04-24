@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import activeComponent from 'react-router-active-component';
-import { Link } from 'react-router';
+
 
 
 export default class Main extends Component {
@@ -15,8 +15,8 @@ export default class Main extends Component {
       <div className="container">
         <nav>
           <ul className="nav nav-tabs nav-justified">
-            <NavLink to="/">Reports</NavLink>
-            <NavLink to="/tasks">Tasks</NavLink>    
+            <NavLink to="/reports">Reports</NavLink>
+            <NavLink to="/tasks">Tasks</NavLink>
           </ul>
         </nav>
 
