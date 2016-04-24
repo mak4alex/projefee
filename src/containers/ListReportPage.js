@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CandlestickChart } from 'react-d3';
+
 
 
 class ListReportPage extends Component {
@@ -8,16 +8,7 @@ class ListReportPage extends Component {
 
 
   render() {
-    let ohlcData = [
-      {
-        name: "AAPL",
-        values: [
-          { x: new Date('2016-10-03'), open: 450, high: 460, low: 440, close: 470 },
-          { x: new Date('2015-11-03'), open: 451, high: 453, low: 435, close: 449 },
-          { x: new Date('2015-12-03'), open: 451, high: 453, low: 435, close: 449 },
-        ]
-      }
-    ];
+ 
     return (
       <div>
         <table className="table table-bordered table-hover">
@@ -51,16 +42,6 @@ class ListReportPage extends Component {
           </tbody>
         </table>
 
-        <div>
-          <CandlestickChart
-            data={ohlcData}
-            width={1000}
-            height={300}
-            xAxisTickInterval={{ unit: 'month', interval: 2 }}
-            yAxisOffset={-30}
-            title="Candlestick Reports Chart"
-          />
-        </div>
       </div>
     );
   }
