@@ -1,30 +1,10 @@
 import { ADD_REPORT, REMOVE_REPORT } from './../actions/report';
+import reportRecords from './../data/reports.json';
 
 
 const initialState = {
-  entities: [
-    {
-      title: "ProjX",
-      laborCosts: "86",
-      timeCosts: "26",
-      projectTitle: "Project1",
-      taskTitle: "Task10",
-      startDate: "2015-04-06",
-      endDate: "2015-05-06",
-      id: 1,
-    },
-    {
-      title: "Proj1",
-      laborCosts: "36",
-      timeCosts: "16",
-      projectTitle: "Project2",
-      taskTitle: "Task11",
-      startDate: "2015-04-10",
-      endDate: "2015-04-16",
-      id: 2,
-    },
-  ],
-  counter: 3,
+  entities: reportRecords.reports,
+  counter: reportRecords.counter,
 };
 
 let newReport = null;

@@ -1,0 +1,55 @@
+{
+  "reports": [
+     {
+      "title": "ProjX",
+      "laborCosts": "86",
+      "timeCosts": "26",
+      "projectTitle": "Project1",
+      "taskTitle": "Task10",
+      "startDate": "2015-04-06",
+      "endDate": "2015-05-06",
+      "id": 1
+    },
+    {
+      "title": "Proj1",
+      "laborCosts": "13",
+      "timeCosts": "16",
+      "projectTitle": "Project2",
+      "taskTitle": "Task11",
+      "startDate": "2015-04-10",
+      "endDate": "2015-04-16",
+      "id": 2
+    },
+    {
+      "title": "Proj2",
+      "laborCosts": "44",
+      "timeCosts": "5",
+      "projectTitle": "Project2",
+      "taskTitle": "Task5",
+      "startDate": "2015-07-10",
+      "endDate": "2015-08-20",
+      "id": 3
+    },
+    {
+      "title": "My Report",
+      "laborCosts": "56",
+      "timeCosts": "6",
+      "projectTitle": "Project1",
+      "taskTitle": "Task11",
+      "startDate": "2015-01-10",
+      "endDate": "2015-03-16",
+      "id": 4
+    },
+    {
+      "title": "Proj1",
+      "laborCosts": "6",
+      "timeCosts": "24",
+      "projectTitle": "Project3",
+      "taskTitle": "Task4",
+      "startDate": "2014-12-10",
+      "endDate": "2015-01-16",
+      "id": 5
+    }
+  ],
+  "counter": 6
+}
