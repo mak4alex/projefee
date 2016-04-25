@@ -71,6 +71,8 @@
   "dependencies": {
     "formsy-react": "^0.18.0",
     "formsy-react-components": "^0.7.1",
+    "jquery": "^2.2.3",
+    "jquery-ui": "^1.10.5",
     "lodash": "^4.11.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",

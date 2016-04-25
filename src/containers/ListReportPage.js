@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReportTable from './../components/ReportTable';
 import ReportTimeLine from './../components/ReportTimeLine';
+import ReportFilter from './../components/ReportFilter';
 
 
 class ListReportPage extends Component {
@@ -11,6 +12,7 @@ class ListReportPage extends Component {
     return (
       <div>
         <ReportTimeLine reports={reports} />
+        <ReportFilter />
         <ReportTable reports={reports} />
       </div>
     );
