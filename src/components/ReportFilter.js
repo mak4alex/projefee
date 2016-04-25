@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import _ui from 'jquery-ui';
+import _ from 'lodash';
+
 
 export default class ReportFilter extends Component {
 
@@ -8,7 +10,7 @@ export default class ReportFilter extends Component {
     super(props, context);
     this.state = {
       time: [0, 100],
-      resource: [0, 100],
+      labor: [0, 100],
       filterField: 'project',
       filterText: '',
     };
@@ -16,6 +18,11 @@ export default class ReportFilter extends Component {
     this.changeFilterText = this.changeFilterText.bind(this);
   }
 
+  componentWillUpdate(props, state) {
+    if (!_.eq(state, this.state)) {
+      this.props.updateFilter(state);
+    }
+  }
 
   componentDidMount() {
     $('#time-slider').slider({
@@ -25,11 +32,11 @@ export default class ReportFilter extends Component {
         this.setState({ time: ui.values });
       },
     });
-    $('#resource-slider').slider({
+    $('#labor-slider').slider({
       range: true, min: 0, max: 100,
-      values: this.state.resource,
+      values: this.state.labor,
       slide: (event, ui) => {
-        this.setState({ resource: ui.values });
+        this.setState({ labor: ui.values });
       },
     });
   }
@@ -72,9 +79,9 @@ export default class ReportFilter extends Component {
           </div>
         </div>
         <div className="col-sm-3">
-          Resource: {`${this.state.resource[0]} - ${this.state.resource[1]}`}
+          Labor: {`${this.state.labor[0]} - ${this.state.labor[1]}`}
           <div>
-            <div id="resource-slider"></div>
+            <div id="labor-slider"></div>
           </div>
         </div>
       </div>

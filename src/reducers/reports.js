@@ -1,4 +1,4 @@
-import { ADD_REPORT, REMOVE_REPORT } from './../actions/report';
+import { ADD_REPORT, REMOVE_REPORT, UPDATE_REPORT_FILTER } from './../actions/report';
 import reportRecords from './../data/reports.json';
 
 
@@ -18,6 +18,8 @@ export default function reports(state = initialState, action) {
           counter: state.counter + 1 });
     case REMOVE_REPORT:
       return state;
+    case UPDATE_REPORT_FILTER:
+      return Object.assign({}, state, { filter: action.options });
     default:
       return state;
   }

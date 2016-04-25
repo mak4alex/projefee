@@ -1,5 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import TaskRow from './../components/TaskRow';
+import TaskInputRow from './../components/TaskInputRow';
+import { bindActionCreators } from 'redux';
+import * as TaskActions from './../actions/task';
+
 
 class TasksPage extends Component {
 
@@ -8,6 +13,8 @@ class TasksPage extends Component {
   };
 
   render() {
+    const { tasks, ...others } = this.props;
+
     return (
       <div>
         <h1>TasksPage</h1>
@@ -19,18 +26,15 @@ class TasksPage extends Component {
               <th>Project Title</th>
               <th>Laboriousness</th>
               <th>Resources</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {
-              this.props.tasks.map(task =>
-                (<tr key={task.taskId}>
-                  <td>{task.taskId}</td>
-                  <td>{task.taskTitle}</td>
-                  <td>{task.projectTitle}</td>
-                  <td>{task.laboriousness}</td>
-                  <td>{task.resource}</td>         
-                </tr>)
+              tasks.map(task =>
+                task.isEdit ?
+                  (<TaskInputRow key={task.taskId} task={task} {...others} />) :
+                  (<TaskRow key={task.taskId} task={task} {...others} />)
               )
             }
           </tbody>
@@ -40,10 +44,17 @@ class TasksPage extends Component {
   }
 }
 
+
 function mapStateToProps(state) {
   return {
     tasks: state.tasks,
   };
 }
 
-export default connect(mapStateToProps)(TasksPage);
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(TaskActions, dispatch);
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(TasksPage);

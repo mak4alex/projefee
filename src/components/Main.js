@@ -9,7 +9,7 @@ export default class Main extends Component {
 
   render() {
     const NavLink = activeComponent('li');
- 
+
     return (
       <div className="container">
         <nav>

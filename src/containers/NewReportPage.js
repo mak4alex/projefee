@@ -122,7 +122,7 @@ class NewReportPage extends Component {
                 <button type="reset" onClick={this.resetForm} className="btn btn-warning">Reset</button>
               </div>
               <div className="btn-group" role="group">
-                <Link to="/" className="btn btn-default">Back</Link>
+                <Link to="/reports" className="btn btn-default">Back</Link>
               </div>
             </div>
         </Formsy.Form>
