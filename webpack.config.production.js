@@ -6,11 +6,12 @@ module.exports = {
   devtool: 'source-map',
   entry: './src/index',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/static/',
+    publicPath: '/public/',
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -18,6 +19,7 @@ module.exports = {
       },
     }),
     new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
       compressor: {
         screw_ie8: true,
         warnings: false,
@@ -32,6 +34,22 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel'],
       exclude: /node_modules/,
+    },
+    {
+      test: /\.json$/,
+      loaders: ['json'],
+      exclude: /node_modules/,
+    },
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader',
+    },
+    {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      loaders: [
+        'file?hash=sha512&digest=hex&name=[hash].[ext]',
+        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+      ],
     }],
   },
 };
