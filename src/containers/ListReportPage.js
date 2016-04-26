@@ -23,7 +23,6 @@ class ListReportPage extends Component {
 }
 
 function filterReports(reports, options) {
-  console.log(options);
   if (options) {
     return reports.filter(report => {
       const filterField =

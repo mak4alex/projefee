@@ -12,6 +12,23 @@ class TasksPage extends Component {
     tasks: PropTypes.array.isRequired,
   };
 
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      isFromVisible: false,
+    };
+    this.showForm = this.showForm.bind(this);
+    this.hideForm = this.hideForm.bind(this);
+  }
+
+  showForm() {
+    this.setState({ isFromVisible: true });
+  }
+
+  hideForm() {
+    this.setState({ isFromVisible: false });
+  }
+
   render() {
     const { tasks, ...others } = this.props;
 
@@ -33,12 +50,29 @@ class TasksPage extends Component {
             {
               tasks.map(task =>
                 task.isEdit ?
-                  (<TaskInputRow key={task.taskId} task={task} {...others} />) :
+                  (<TaskInputRow key={task.taskId} task={task}
+                    saveHandler={this.props.updateTask}
+                    cancelHandler={this.props.cancelEditTask} />) :
                   (<TaskRow key={task.taskId} task={task} {...others} />)
               )
             }
+            {
+              this.state.isFromVisible ?
+                (<TaskInputRow
+                  saveHandler={this.props.saveNewTask}
+                  cancelHandler={this.hideForm} />) : (<tr></tr>)
+            }
           </tbody>
         </table>
+        <div className="row">
+          <div className="col-xs-offset-10 col-xs-2">
+            {
+              !this.state.isFromVisible ?
+                (<button className="btn btn-primary btn-block"
+                  onClick={this.showForm}>Add task</button>) : ('')
+            }
+          </div>
+        </div>
       </div>
     );
   }

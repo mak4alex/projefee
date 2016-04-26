@@ -2,6 +2,17 @@ export const SET_EDIT_TASK = 'SET_EDIT_TASK';
 export const CANCEL_EDIT_TASK = 'CANCEL_EDIT_TASK';
 export const UPDATE_TASK = 'UPDATE_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
+export const SAVE_NEW_TASK = 'SAVE_NEW_TASK';
+
+
+export function saveNewTask(task) {
+  return (dispatch) => {
+    dispatch({
+      type: SAVE_NEW_TASK,
+      task,
+    });
+  };
+}
 
 
 export function setEditTask(id) {
@@ -24,7 +35,7 @@ export function cancelEditTask(id) {
 }
 
 
-export function updateTask(id, task) {
+export function updateTask(task, id) {
   return (dispatch) => {
     dispatch({
       type: UPDATE_TASK,

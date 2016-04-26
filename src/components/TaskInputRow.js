@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 export default class TaskInputRow extends Component {
 
+  static defaultProps = {
+    task: {
+      taskId: 0,
+    },
+  }
+
   constructor(props, context) {
     super(props, context);
     this.cancelEdit = this.cancelEdit.bind(this);
@@ -9,7 +15,7 @@ export default class TaskInputRow extends Component {
   }
 
   cancelEdit(id) {
-    this.props.cancelEditTask(id);
+    this.props.cancelHandler(id);
   }
 
   update(id) {
@@ -21,7 +27,7 @@ export default class TaskInputRow extends Component {
       resource: this.refs.resource.value,
       isEdit: false,
     };
-    this.props.updateTask(id, task);
+    this.props.saveHandler(task, id);
   }
 
   render() {

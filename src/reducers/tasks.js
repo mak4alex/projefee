@@ -1,6 +1,6 @@
 import taskRecords from './../data/tasks.json';
 import { SET_EDIT_TASK, CANCEL_EDIT_TASK, UPDATE_TASK,
-         DELETE_TASK } from './../actions/task';
+         DELETE_TASK, SAVE_NEW_TASK } from './../actions/task';
 
 
 const initilaState = taskRecords.tasks
@@ -8,6 +8,7 @@ const initilaState = taskRecords.tasks
 
 
 export default function tasks(state = initilaState, action) {
+  let newTask = null;
   switch (action.type) {
     case SET_EDIT_TASK:
       return state.map(task => {
@@ -32,6 +33,10 @@ export default function tasks(state = initilaState, action) {
       });
     case DELETE_TASK:
       return state.filter(task => task.taskId !== action.id);
+    case SAVE_NEW_TASK:
+      newTask = action.task;
+      newTask.taskId = state[state.length - 1].taskId + 1;
+      return [...state, newTask];
     default:
       return state;
   }
