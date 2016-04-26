@@ -4,7 +4,6 @@ const express = require('express');
 const webpack = require('webpack');
 const config = require('./webpack.config');
 const port = process.env.PORT || 3000;
-const ip = process.env.IP || 'localhost';
 
 const app = express();
 const compiler = webpack(config);
@@ -26,11 +25,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(port, ip, (err) => {
+app.listen(port, (err) => {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log(`Listening at ${ip}:${port}`);
+  console.log(`Listening at ${port}`);
 });
