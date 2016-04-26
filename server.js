@@ -6,7 +6,7 @@ const app = express();
 
 
 if (process.env.NODE_ENV === 'production') {
-  const publicPath = express.static(path.join(__dirname, '../public'));
+  const publicPath = express.static(path.join(__dirname, './public'));
   app.use('/public', publicPath);
 } else {
   const webpack = require('webpack');
